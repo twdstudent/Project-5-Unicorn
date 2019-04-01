@@ -12,22 +12,36 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css" />
 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <title>{% block page_title %}{% endblock %}</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-default">
-        <ul class="nav navbar-nav">
-            {% if user.is_authenticated %}
-            <li><a href="{% url 'profile' %}">profile</a></li>
-            <li><a href="{% url 'logout' %}">logout</a></li>
-            {% else %}
-            <li><a href="{% url 'login' %}">login</a></li>
-            <li><a href="{% url 'registration' %}">register</a></li>
-            {% endif %}
-        </ul>
+    <nav class="navbar navbar-masthead navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Unicorn App</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'profile' %}">Profile</a></li>
+                        <li><a href="{% url 'logout' %}">Log Out</a></li>
+                    {%  else %}
+                        <li><a href="{% url 'registration' %}">Register</a></li>
+                        <li><a href="{% url 'login' %}">Log In</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
     </nav>
 
     <div class="align-header">
