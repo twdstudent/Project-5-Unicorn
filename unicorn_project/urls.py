@@ -13,22 +13,13 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
-from accounts.views import index, logout, login, registration, user_profile
-from django.core.urlresolvers import reverse_lazy
-from django.contrib.auth.views import password_reset, password_reset_done, password_reset_confirm, password_reset_complete
+from accounts.views import index
+from accounts import urls as accounts_urls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', index, name="index"),
-    url(r'^accounts/logout/$', logout, name="logout"),
-    url(r'^accounts/login/$', login, name="login"),
-    url(r'^accounts/register/$', registration, name="registration"),
-    url(r'^accounts/profile/$', user_profile, name="profile"),
-    url(r'^$', password_reset, {'post_reset_redirect': reverse_lazy('password_reset_done')}, name='password_reset'),
-    url(r'^done/$', password_reset_done, name='password_reset_done'),
-    url(r'^(?P<uidb64>[0-9A-Za-z]+)-(?P<token>.+)/$', password_reset_confirm,
-        {'post_reset_redirect': reverse_lazy('password_reset_complete')}, name='password_reset_confirm'),
-    url(r'^complete/$', password_reset_complete, name='password_reset_complete')
+    url(r'^accounts/', include(accounts_urls))
 ]
