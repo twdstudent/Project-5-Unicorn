@@ -20,3 +20,18 @@ form {
 h1 {
     text-align: center;
 }
+
+.check-out-wrapper {
+    width: 100%;
+}
+
+.check-out {
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.btn {
+    margin-left: 10px;
+}

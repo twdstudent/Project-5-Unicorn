@@ -1,18 +1,15 @@
-{% extends 'base.html' %}
-{% load bootstrap_tags %}
-
-{% block content %}
+{% extends 'base.html' %} {% load bootstrap_tags %} {% block content %}
 
 <div class="row row-flex">
     {% for item in cart_items %}
     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-        
+
         <div>
             <h3>{{ item.product.name }}</h3>
             <p class="product-description">{{ item.product.description }}</p>
             <p>{{ item.product.price }}</p>
             <p>
-                
+
                 <form class="form-inline" method="post" action="{% url 'adjust_cart' item.id %}">
                     {% csrf_token %}
                     <div class="form-group">
@@ -30,10 +27,12 @@
     </div>
     {% endfor %}
 </div>
-<div class="row">
-    <p>Total</p>
-    <p><i class="fas fa-pound-sign"></i>{{ total }}</p>
-    <a href="/" class="btn btn-success" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>Checkout</a>
-</div>
 
+<div class="check-out-wrapper">
+    <div class="check-out">
+        <p>Total</p>
+        <p><i class="fas fa-pound-sign"></i>{{ total }}</p>
+        <a href="/" class="btn btn-success" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>Checkout</a>
+    </div>
+</div>
 {% endblock %}
