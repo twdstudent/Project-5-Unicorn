@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="row row-flex">
+    {% for feature in Feature %}
+    <div class="col-xs-6 col-md-4 col-lg-3 display panel panel-default">
+        <h3>{{ feature.name }}</h3>
+        <p class="bug-detail">{{ feature.description }}</p>
+    </div>
+</div>

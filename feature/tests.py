@@ -1,13 +1,13 @@
 from django.test import TestCase
-from .models import Bugs
+from .models import Feature
 
 # Create your tests here.
-class BugTests(TestCase):
+class FeatureTests(TestCase):
     """
     Define the tests that we'll run against
     bugs model
     """
 
     def test_str(self):
-        test_name = Bugs(name='A bug')
-        self.assertEqual(str(test_name), 'A bug')
+        test_name = Feature(name='A feature')
+        self.assertEqual(str(test_name), 'A feature')
