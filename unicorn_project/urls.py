@@ -20,6 +20,7 @@ from accounts import urls as accounts_urls
 from bugs import urls as urls_bugs
 from feature import urls as urls_feature
 from cart import urls as urls_cart
+from checkout import urls as urls_checkout
 from bugs.views import all_bugs
 from feature.views import all_feature
 from django.views import static
@@ -31,4 +32,6 @@ urlpatterns = [
     url(r'^bugs/', include(urls_bugs)),
     url(r'^feature/', include(urls_feature)),
     url(r'^cart/', include(urls_cart)),
+    url(r'^checkout/', include(urls_checkout)),
+    
 ]

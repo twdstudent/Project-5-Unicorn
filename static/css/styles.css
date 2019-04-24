@@ -35,3 +35,13 @@ h1 {
 .btn {
     margin-left: 10px;
 }
+
+.row.row-flex {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.feature-description {
+    min-height: 40px;
+}
