@@ -17,12 +17,18 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from accounts.views import index
 from accounts import urls as accounts_urls
+from bugs import urls as urls_bugs
+from feature import urls as urls_feature
 from cart import urls as urls_cart
+from bugs.views import all_bugs
+from feature.views import all_feature
 from django.views import static
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', index, name="index"),
     url(r'^accounts/', include(accounts_urls)),
+    url(r'^bugs/', include(urls_bugs)),
+    url(r'^feature/', include(urls_feature)),
     url(r'^cart/', include(urls_cart)),
 ]
