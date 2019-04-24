@@ -53,7 +53,7 @@ Also followed the reset link process with success.
 This project is backed up to GitHub and Heroku. (links at the top)
 
 Heroku config variables
-- DATABASE_URL postgres://yaneyysazmcxog:8ccda1e5afbaf1360e653ce08e7a7249f975fefb6a15487581ea20fef802bddf@ec2-54-246-92-116.eu-west-1.compute.amazonaws.com:5432/d37rbbelh9usko
+- DATABASE_URL (noy sharing value)
 - DISABLE_COLLECTSTATIC 1
 - SECRET_KEY (not sharing value)
 - STRIPE_PUBLISHABLE (not sharing value)
