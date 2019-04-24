@@ -2,71 +2,97 @@
 ### Unicorn Attractor.
 
 - <a href="https://github.com/twdstudent/Project-5-Unicorn">Link to GitHub Repository.</a>
+- <a href="https://project-5-unicornapp-td.herokuapp.com/">Link to live site on Heroku.</a>
+- <a href="https://dashboard.heroku.com/apps/project-5-unicornapp-td">Heroku Repo</a>
 
 [![Build Status](https://travis-ci.org/twdstudent/Project-5-Unicorn.svg?branch=master)](https://travis-ci.org/twdstudent/Project-5-Unicorn)
 
-Your Project's Name
-One or two paragraphs providing an overview of your project.
+#### The Brief
+The brief was to build a unicorn attractor app, an issue tracker similar to that of GitHub.
+The service is primarly a free one, user can upvote bugs to help increase focus and thus you r attention given to fixing this bug.
+Features will only be developed if enough money is offered.
 
-Essentially, this part is your sales pitch.
+### UX
+(wire frames located in wire-frames directory)
+This project is not functioning, i was simply unable to build a working application with the time I had left.
+The project runs fine from cloud 9, the naviagation, forms and general layout is responsive.
+The log in/log out functionality is working fine and all the reset password finctionality is also wokring fine.
+However sadly the application wont open open up on Heroku.
+Sadly there is not much else to write about this section due to it being incomplete and not being able to wire upuploading bugs 
+an features.
+Design intened to be simple and clean, simply drawing focus on what users add to the site.
 
-UX
-Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
+### Features
+back end logic for bugs and features is complete but was unable to wire it up to the templates.
+Login/logout features along with reset password links working correctly when tested through C9.
 
-In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
+### Features Left to Implement
+To actually have the ability for users to add bugs and features for development, have a job status for each one.
+Have a blog section where users can discuss ideas and theories.
 
-As a user type, I want to perform an action, so that I can achieve a goal.
-This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
+### Technologies Used
+This a django project which was installed via the command line.
+Bootstrap was used for stlying of buttons, forms and responsive page layout.
+font-awsome was used for icons used in the navigation ie the cart button for visual aid as to what the button does.
+HTML used in templates.
+STRIPE used for the hadling of card payments for when a user wishes to pay for a feature. 
 
-Features
-In this section, you should go over the different parts of your project, and describe each in a sentence or so.
+### JQuery
+used in the JS required for wiring up stripes backend logic.
 
-Existing Features
-Feature 1 - allows users X to achieve Y, by having them fill out Z
-...
-For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
+### Testing
+(some success in this area) Travis was used on the project, and is passing!
+the import env in settings.py has been commented out as travis can't read the env.py file as it it's in the 
+git ignore file. minor testing done in bugs app and feature app, see tests.py.
 
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
+tested registration process and reset password links by actually registering with the site (running via C9)s
+deliberately inputted an invalid email address and it wouldnt let me register.
+Also followed the reset link process with success.
 
-Features Left to Implement
-Another feature idea
-Technologies Used
-In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
+### Deployment
+This project is backed up to GitHub and Heroku. (links at the top)
 
-JQuery
-The project uses JQuery to simplify DOM manipulation.
-Testing
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
+Heroku config variables
+- DATABASE_URL postgres://yaneyysazmcxog:8ccda1e5afbaf1360e653ce08e7a7249f975fefb6a15487581ea20fef802bddf@ec2-54-246-92-116.eu-west-1.compute.amazonaws.com:5432/d37rbbelh9usko
+- DISABLE_COLLECTSTATIC 1
+- SECRET_KEY (not sharing value)
+- STRIPE_PUBLISHABLE (not sharing value)
+- STRIPE_SECRET (not sharing value)
 
-Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
+GitHub Deployment:
+- intial commit, rebuilding repo with files removed
+- setting up Travis intergrated testing
+- app specific url files added
+- tarvis issues
+- fixed indentation in travis file
+- trying something out
+- travis issue again
+- fixing requiremnets file
+- added feature app
+- added cart app and fixing url bug
+- fixed bug in contexts.py file
+- fixed urls.py file in root direcotory
+- created checkout app and built models
+- added checkout template, forms.py file and urls.py for checkout
+- updated requirements.txt file for stripe
+- fixed bug with checkout app and added icons
+- updated settings.py file for travis testing
+- installed gunicorn and created the Procfile
+- added heroku to allowed hosts
+- trying something out
+- prepping for submission
 
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
-
-Contact form:
-Go to the "Contact Us" page
-Try to submit the empty form and verify that an error message about the required fields appears
-Try to submit the form with an invalid email address and verify that a relevant error message appears
-Try to submit the form with all inputs valid and verify that a success message appears.
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
-
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
-
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
-
-Deployment
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
-
-In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
+enviroment variables were used (env.py file) to keep sensitive information hidden from production.
+Git ignore file used so said variables didnt get pushed to GitHib.
+Mentioned earlier that import env in the settings.py file has been commented out as travis can't see the 
+gitingnore files thus the tests fail, so when working via C9 I remove the comment so a can continue development
+and simply re-comment out the import env when backing up to GitHub.
 
 Different values for environment variables (Heroku Config Vars)?
 Different configuration files?
 Separate git branch?
 In addition, if it is not obvious, you should also describe how to run your code locally.
 
-Credits
-Content
-The text for section Y was copied from the Wikipedia article Z
-Media
-The photos used in this site were obtained from ...
-Acknowledgements
-I received inspiration for this project from X
+
+### Acknowledgements
+Would like to thank Chris Zielinski for his support and guidence throught this course.
