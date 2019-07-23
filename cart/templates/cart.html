@@ -30,8 +30,10 @@
 
 <div class="check-out-wrapper">
     <div class="check-out">
-        <p>Total</p>
-        <p><i class="fas fa-pound-sign"></i>{{ total }}</p>
+        <div class="total">
+            <p>Total</p>
+            <p><i class="fas fa-pound-sign"></i>{{ total }}</p>
+        </div>
         <a href="{% url 'checkout' %}" class="btn btn-success" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>Checkout</a>
     </div>
 </div>

@@ -24,6 +24,7 @@ from checkout import urls as urls_checkout
 from bugs.views import all_bugs
 from feature.views import all_feature
 from django.views import static
+from .settings import MEDIA_ROOT
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),

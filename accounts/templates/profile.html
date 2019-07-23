@@ -1,6 +1,15 @@
-{% extends 'base.html' %} 
-{% block page_title %}{{ user }}'s Profile{% endblock %} 
-{% block page_heading %}{{ user }}'s Profile{% endblock %} 
-{% block content %}
-<p>{{ profile.email }}</p>
+{% extends 'base.html' %} {% block page_title %}{{ user }}'s Profile{% endblock %} {% block page_heading %}{{ user }}'s Profile{% endblock %} {% block content %}
+<div class="logged-in">{{ profile.email }}</div>
+
+<hr class="hr">
+
+<div class="button-container">
+    <div class="button">
+        <button type="button" class="btn-mod btn btn-danger">Add a Bug</button>
+    </div>
+    <div class="button">
+        <button type="button" class="btn-mod btn btn-success">Add a feature</button>
+    </div>
+</div>
+
 {% endblock %}

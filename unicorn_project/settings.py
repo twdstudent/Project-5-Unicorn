@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
-import env
+# import env
 import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [os.environ.get('C9_HOSTNAME'), 'project-5-unicornapp-td.herokuapp.com']
+ALLOWED_HOSTS = [os.environ.get('C9_HOSTNAME'), '2a08f34f65174a7b810061f5ed904cb0.vfs.cloud9.eu-west-1.amazonaws.com', 'project-5-unicornapp-td.herokuapp.com']
 
 
 # Application definition
