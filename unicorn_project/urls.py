@@ -15,14 +15,16 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.views.generic import RedirectView
+from django.views.static import serve
 from accounts.views import index
 from accounts import urls as accounts_urls
 from bugs import urls as urls_bugs
 from feature import urls as urls_feature
 from cart import urls as urls_cart
 from checkout import urls as urls_checkout
-from bugs.views import all_bugs
-from feature.views import all_feature
+from bugs.views import get_bugs, bugs_detail, create_or_edit_bug 
+from feature.views import get_feature, feature_detail, create_or_edit_feature
 from django.views import static
 from .settings import MEDIA_ROOT
 
@@ -30,9 +32,14 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', index, name="index"),
     url(r'^accounts/', include(accounts_urls)),
-    url(r'^bugs/', include(urls_bugs)),
-    url(r'^feature/', include(urls_feature)),
+    url(r'^$', RedirectView.as_view(url='bugs/')),
+    url(r'^bugs/', include('bugs.urls')),
+    url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}),
+    url(r'^$', RedirectView.as_view(url='feature/')),
+    url(r'^feature/', include('feature.urls')),
     url(r'^cart/', include(urls_cart)),
     url(r'^checkout/', include(urls_checkout)),
-    
 ]
+
+
+    
