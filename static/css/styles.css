@@ -81,8 +81,8 @@ form {
 
 .button-container {
     width: 100%;
-    height: 100px;
     margin-top: 30px;
+    margin-bottom: 50px;
 }
 
 .button-wrapper {
@@ -118,4 +118,10 @@ form {
 
 .feature-description {
     min-height: 40px;
+}
+
+.footer {
+    height: 75px;
+    color: red;
+    background-color: red;
 }

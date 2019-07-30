@@ -1,22 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="row row-flex">
-    {% for bug in bugs %}
-    <div class="col-xs-6 col-md-4 col-lg-3 display panel panel-default">
-        <h3>{{ bug.name }}</h3>
-        <p class="bug-detail">{{ bug.description }}</p>
-    </div>
-    <form method="post" action="{% url 'add_to_cart' feature.id %}">
-            {% csrf_token %}
-            <div class="input-group">
-                <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
-                <span class="input-group-btn">
-                            <button class="btn btn-success" type="submit">Add</button>
-                        </span>
-            </div>
-        </form>
-    {% endfor %}
-</div>
+<h1 class="h1">bugs</h1>
 
 {% endblock %}
