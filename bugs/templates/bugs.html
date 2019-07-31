@@ -3,17 +3,22 @@
 <h1 class="h1">bugs</h1>
 
 {% for bug in bug %}
-<div class="container-fluid">
+<!-- div class="container-fluid" -->
     <div class="row">
-        <div class="col-xs-12, col-md-6, col-lg-4, col-xl-3, bug-box">
-            <p><span>Author:</span>{{ user }}</p>
+        <div class="col-md-6, col-lg-4, bug-box">
             <div>
-                <p>{{ bug.content|truncatewords:30 }}</p>
-                <p><a href="{% url 'bugs_detail' bug.id %}"  class="btn btn-default">Read more</a></p>
-                <p><span class="boldtext">Published on:</span> {{ bug.published_date }} </p>
-                <p><span class="boldtext">Views:</span> {{ post.views }}</p>
+                <h3 class="bug-headers"><span>Author: </span>{{ user }}</h3>
+                <div class="sub-bug-box">
+                    <h4><span>Title:</span>{{ bug.title }}</h4>
+                    <p>{{ bug.content|truncatewords:30 }}</p>
+                    <p><a href="{% url 'bugs_detail' bug.id %}" class="btn btn-default">Read more</a></p>
+                    {% if bug.image %}
+                    <img class="img-bugpost" src="/media/img/{{ bug.image }}"> {% endif %}
+                    <p><span class="boldtext">Published on:</span> {{ bug.published_date }} </p>
+                    <p><i class="fas fa-eye"></i> {{ bug.views }}</p>
+                </div>
             </div>
         </div>
     </div>
-</div>
+<!-- /div -->
 {% endfor %} {% endblock %}

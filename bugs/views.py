@@ -23,7 +23,7 @@ def bugs_detail(request, pk):
     bug = get_object_or_404(Bugs, pk=pk)
     bug.views += 1
     bug.save()
-    return render(request, "bugs.html", {'bug': bug})
+    return render(request, "bug-detail.html", {'bug': bug})
     
 def create_or_edit_bug(request, pk=None):
     """

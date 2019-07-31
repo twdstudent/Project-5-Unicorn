@@ -4,21 +4,39 @@
 <hr class="hr">
 
 <div class="button-container">
-    <div class="button">
-        <button type="button" class="btn-mod btn btn-danger"><li><a href="{% url 'new_bug' %}"><i class="fas fa-bug"></i>add a bug</a></li></button>
-    </div>
-    <div class="button">
-        <button type="button" class="btn-mod btn btn-success"><li><a href="{% url 'new_feature' %}"><i class="fas fa-users-cog"></i>add a feature</a></li></button>
+    <div class="row">
+        <div class="col-md-6, col-lg-6">
+            <div class="button1">
+                <a href="{% url 'new_bug' %}" class="btn-mod btn btn-danger"><i class="fas fa-bug"></i>add a bug</a>
+            </div>
+        </div>
+        <div class="col-xs-12, col-md-6, col-lg-6">
+            <div class="button2">
+                <a href="{% url 'new_feature' %}" class="btn-mod btn btn-success"><i class="fas fa-users-cog"></i>add a feature</a>
+            </div>
+        </div>
     </div>
 </div>
 
 <hr class="hr">
 
 <h1 class="h1">your features & bugs</h1>
-
-<div>
-<!-- bug post content -->
-
-</div>
+    <!-- bug post content -->
+    {% for bug in bug %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12, col-md-6, col-lg-4, col-xl-3, bug-box">
+                <h3><span>Author:</span>{{ user }}</h3>
+                <hr>
+                <div>
+                    <p>{{ bug.content|truncatewords:30 }}</p>
+                    <p><a href="{% url 'bugs_detail' bug.id %}" class="btn btn-default">Read more</a></p>
+                    <p><span class="boldtext">Published on:</span> {{ bug.published_date }} </p>
+                    <p><span class="boldtext">Views:</span> {{ post.views }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
 
 {% endblock %}
