@@ -10,7 +10,7 @@ def get_bugs(request):
     and render them to the 'bugs.html' template
     """
     bug = Bugs.objects.filter(published_date__lte=timezone.now()
-        ).order_by('-published_date')
+        ).order_by('published_date')
     return render(request, "bugs.html", {'bug': bug})
 
 def bugs_detail(request, pk):
@@ -23,7 +23,7 @@ def bugs_detail(request, pk):
     bug = get_object_or_404(Bugs, pk=pk)
     bug.views += 1
     bug.save()
-    return render(request, "bug-detail.html", {'bug': bug})
+    return render(request, "bugs.html", {'bug': bug})
     
 def create_or_edit_bug(request, pk=None):
     """
@@ -38,5 +38,5 @@ def create_or_edit_bug(request, pk=None):
             post = form.save()
             return redirect(bugs_detail, post.pk)
     else:
-        form = BugsPostForm(instance=post)
+        form = BugsPostForm(instance=bug)
     return render(request, 'bug-post-form.html', {'form': form})    

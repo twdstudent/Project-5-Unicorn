@@ -12,7 +12,7 @@ def get_feature(request):
     and render them to the 'feature.html' template
     """
     feature = Feature.objects.filter(published_date__lte=timezone.now()
-        ).order_by('-published_date')
+        ).order_by('published_date')
     return render(request, "feature.html", {'feature': feature})
     
 def feature_detail(request, pk):
@@ -40,5 +40,5 @@ def create_or_edit_feature(request, pk=None):
             post = form.save()
             return redirect(feature_detail, post.pk)
     else:
-        form = FeaturesPostForm(instance=post)
+        form = FeaturesPostForm(instance=feature)
     return render(request, 'feature-post-form.html', {'form': form})     
