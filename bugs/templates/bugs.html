@@ -4,21 +4,33 @@
 
 {% for bug in bug %}
 <!-- div class="container-fluid" -->
-    <div class="row">
-        <div class="col-md-6, col-lg-4, bug-box">
-            <div>
-                <h3 class="bug-headers"><span>Author: </span>{{ user }}</h3>
-                <div class="sub-bug-box">
-                    <h4><span>Title:</span>{{ bug.title }}</h4>
-                    <p>{{ bug.content|truncatewords:30 }}</p>
-                    <p><a href="{% url 'bugs_detail' bug.id %}" class="btn btn-default">Read more</a></p>
-                    {% if bug.image %}
-                    <img class="img-bugpost" src="/media/img/{{ bug.image }}"> {% endif %}
-                    <p><span class="boldtext">Published on:</span> {{ bug.published_date }} </p>
-                    <p><i class="fas fa-eye"></i> {{ bug.views }}</p>
+<div class="row">
+    <div class="col-md-6, col-lg-4, bug-box">
+        <div>
+            <h3 class="bug-headers"><span>Author: </span>{{ user }}</h3>
+            <div class="sub-bug-box">
+                <h4><span>Title:</span>{{ bug.title }}</h4>
+                <p>{{ bug.content|truncatewords:30 }}</p>
+                <p><a href="{% url 'bugs_detail' bug.id %}" class="btn btn-default">Read more</a></p>
+                {% if bug.image %}
+                <img id="bugImage" class="img-bugpost" src="{{ MEDIA_URL }}{{ bug.image }}" alt="{{ bug.name }}">
+                <!-- modal -->
+                <div id="imgModal" class="modal">
+                    
+                    <span class="close">&times;</span>
+
+                    <!-- Modal Content (The Image) -->
+                    <img class="modal-content" id="image">
+
+                    <!-- Modal Caption (Image Text) -->
+                    <div id="imageTitle"></div>
                 </div>
+                {% endif %}
+                <p><span class="boldtext">Published on:</span> {{ bug.published_date }} </p>
+                <p><i class="fas fa-eye"></i> {{ bug.views }}</p>
             </div>
         </div>
     </div>
+</div>
 <!-- /div -->
 {% endfor %} {% endblock %}
