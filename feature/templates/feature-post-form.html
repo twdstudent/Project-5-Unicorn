@@ -3,7 +3,6 @@
 
 {% load bootstrap_tags %}
 
-<h1 class="h1">new bug</h1>
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form | as_bootstrap }}

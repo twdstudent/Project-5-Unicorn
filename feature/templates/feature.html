@@ -2,4 +2,23 @@
 
 <h1 class="h1">features</h1>
 
+{% for feature in feature %}
+<!-- div class="container-fluid" -->
+<div class="row">
+    <div class="col-md-6, col-lg-4, bug-box">
+        <div>
+            <h3 class="bug-headers"><span>Author: </span>{{ user }}</h3>
+            <div class="sub-bug-box">
+                <h4><span>Title:</span>{{ feature.title }}</h4>
+                <p>{{ feature.content|truncatewords:30 }}</p>
+                <p><a href="{% url 'bugs_detail' bug.id %}" class="btn btn-default">Read more</a></p>
+                <p><span class="boldtext">Published on:</span> {{ feature.published_date }} </p>
+                <p><i class="fas fa-eye"></i> {{ feature.views }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /div -->
+{% endfor %}
+
 {% endblock %}
