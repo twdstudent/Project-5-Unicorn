@@ -13,7 +13,7 @@
                 <p><a href="{% url 'bugs_detail' bug.id %}" class="btn btn-default">Read more</a></p>
                 {% if bug.image %}
                 <img id="bugImage" class="img-bugpost" src="{{ MEDIA_URL }}{{ bug.image }}" alt="{{ bug.name }}"> {% endif %}
-                <p><span class="boldtext">Published on:</span> {{ bug.published_date }} </p>
+                <div class="Published"><p ><span class="boldtext">Published on:</span> {{ bug.published_date }} </p></div>
                 <p><i class="fas fa-eye"></i> {{ bug.views }}</p>
             </div>
         </div>
