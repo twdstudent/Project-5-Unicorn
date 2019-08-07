@@ -1,21 +1,20 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
 <h1 class="h1">bug detail</h1>
 
-<p>{{ user }}</p>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-xs-12 col-md-6 col-lg-4 col-xl-3">
+<div class="bug-container">
+    <div class="bug-box-detail">
+        <h3 class="bug-headers"><span>Author: </span>{{ user }}</h3>
+        <div class="sub-bug-box">
+            <h4><span>Title:</span>{{ bug.title }}</h4>
             {% if post.image %}
-                <img class="img-bugpost" src="/media/img{{ bug.image }}">
-            {% endif %}
+            <img class="img-bugpost" src="/media/img{{ bug.image }}"> {% endif %}
             <p>{{ bug.content }}</p>
-                    <p><span>Published on:</span> {{ bug.published_date }} </p>
-                    <p><span>Views:</span> {{ bug.views }}</p>
-                    <a href="{% url 'get_bugs' %}" class="btn btn-default">Back to Bugs Page</a>
-                    <a href="{% url 'edit_bug' bug.id %}" class="btn btn-default">Edit Bug</a>
-                    <hr>
+            <p><span>Published on:</span> {{ bug.published_date }} </p>
+            <p><span>Views:</span> {{ bug.views }}</p>
+            <a href="{% url 'get_bugs' %}" class="btn btn-default">Back to Bugs Page</a>
+            <a href="{% url 'edit_bug' bug.id %}" class="btn btn-default">Edit Bug</a>
+            <hr>
         </div>
     </div>
 </div>

@@ -1,3 +1,17 @@
 {% extends 'base.html' %} {% block content %}
 
-{% endblock %}
+<div class="feature-container">
+    <div class="feature-box-detail">
+        <div>
+            <h3 class="bug-headers"><span>Author: </span>{{ user }}</h3>
+            <div class="sub-feature-box">
+                <p>{{ feature.content }}</p>
+                <p><span>Published on:</span> {{ feature.published_date }} </p>
+                <p><span>Views:</span> {{ feature.views }}</p>
+                <a href="{% url 'get_feature' %}" class="btn btn-default">Back to Features Page</a>
+                <a href="{% url 'edit_feature' feature.id %}" class="btn btn-default">Edit Feature</a>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}
