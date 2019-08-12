@@ -1,7 +1,6 @@
 from django.test import TestCase
-from django.shortcuts import get_object_or_404
 from .models import Bugs
-
+from .views import get_bugs, bugs_detail, create_or_edit_bug 
 
 class TestViews(TestCase):
 
@@ -27,4 +26,7 @@ class TestViews(TestCase):
         page = self.client.get("/1")
         self.assertEqual(page.status_code, 404)    
         
-   
+    def test_post_create_an_bug(self):
+        response = self.client.post("/new_bug", {"title": "Create a Test"})
+        bug = get_object_or_404(Bugs, pk=1)
+        self.assertEqual(bug.done, False)     
