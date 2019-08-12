@@ -9,5 +9,5 @@ class FeatureTests(TestCase):
     """
 
     def test_str(self):
-        test_name = Feature(name='A feature')
-        self.assertEqual(str(test_name), 'A feature')
+        test_title = Feature(title='A feature')
+        self.assertEqual(str(test_title), 'A feature')

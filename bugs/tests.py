@@ -9,5 +9,5 @@ class BugTests(TestCase):
     """
 
     def test_str(self):
-        test_name = Bugs(name='A bug')
-        self.assertEqual(str(test_name), 'A bug')
+        test_title = Bugs(title='A bug')
+        self.assertEqual(str(test_title), 'A bug')
