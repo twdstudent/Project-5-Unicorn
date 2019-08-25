@@ -27,6 +27,12 @@ form {
     text-align: center;
 }
 
+.align {
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .logged-in {
     width: 30%;
     margin-left: auto;
