@@ -9,9 +9,12 @@ def get_bugs(request):
     of Bugs that were posted prior to 'now'
     and render them to the 'bugs.html' template
     """
-    bug = Bugs.objects.filter(published_date__lte=timezone.now()
-        ).order_by('published_date')
+    bug = Bugs.objects.all()
     return render(request, "bugs.html", {'bug': bug})
+
+#    bug = Bugs.objects.filter(published_date__lte=timezone.now()
+#        ).order_by('published_date')
+#    return render(request, "bugs.html", {'bug': bug})
     
 def upvote_bug(request, pk):
     """

@@ -10,7 +10,7 @@
             <h3 class="bug-headers"><span>Author: </span>{{ user }}</h3>
             <div class="sub-bug-box">
                 <h4><span>Title:</span>{{ bug.title }}</h4>
-                <div> status </div>
+                <h4><span>Status:</span> {{ bug.status }} </h4>
                 <p>{{ bug.content|truncatewords:30 }}</p>
                 <p><a href="{% url 'bugs_detail' bug.id %}" class="btn btn-default">Read more</a></p>
                 {% if bug.image %}

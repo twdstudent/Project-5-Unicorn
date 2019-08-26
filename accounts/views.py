@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import auth, messages
+from django.utils import timezone
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from accounts.forms import UserLoginForm, UserRegistrationForm
@@ -71,15 +72,12 @@ def user_profile(request):
     user = User.objects.get(email=request.user.email)
     return render(request, 'profile.html', {"profile": user})
     
-
-#def bugs_detail(request, pk):
-#    """
-#    Create a view that returns a single
-#    Bug object based on the post ID (pk) and
-#    render it to the 'bug-detail.html' template.
-#    Or return a 404 error if the bug isn't found
-#    """
-#    bug = get_object_or_404(Bugs, pk=pk)
-#    bug.views += 1
-#    bug.save()
-#    return render(request, "profile.html", {'bug': bug})    
+def get_user_bugs(request):
+    """
+    This will create view that will return a list
+    of Bugs that were posted prior to 'now'
+    and render them to the 'bugs.html' template
+    """
+    bug = Bugs.objects.filter(published_date__lte=timezone.now()
+        ).order_by('published_date')
+    return render(request, "profile.html", {'bug': bug})

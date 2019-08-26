@@ -20,7 +20,7 @@
 
 <hr class="hr">
 
-<h1 class="h1">your features</h1>
+<h1 class="h1">your bugs</h1>
     <!-- bug post content -->
     
     {% for bug in bug %}
@@ -33,7 +33,7 @@
                     <p>{{ bug.content|truncatewords:30 }}</p>
                     <p><a href="{% url 'bugs_detail' bug.id %}" class="btn btn-default">Read more</a></p>
                     <p><span class="boldtext">Published on:</span> {{ bug.published_date }} </p>
-                    <p><span class="boldtext">Views:</span> {{ post.views }}</p>
+                    <p><span class="boldtext">Views:</span> {{ bug.views }}</p>
                 </div>
             </div>
         </div>
@@ -42,6 +42,6 @@
     
 <hr class="hr">    
 
-<h1 class="h1">your bugs</h1>
+<h1 class="h1">your features</h1>
 
 {% endblock %}
