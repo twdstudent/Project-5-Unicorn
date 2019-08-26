@@ -117,27 +117,11 @@ form {
     width: 85%;
 }
 
-.row.row-flex {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 30px;
-}
-
 .feature-description {
     min-height: 40px;
 }
 
-.footer {
-    height: 75px;
-    color: red;
-    background-color: red;
-}
-
 /*-- bug page --*/
-
-.bug-container {
-    width: 100%;
-}
 
 .feature-container {
     width: 100%;
@@ -210,6 +194,11 @@ form {
     margin-right: auto;
     border-radius: 5px;
     padding: 10px;
+}
+
+.view-likes {
+    display: inline-block;
+    width: 50px;
 }
 
 @media (max-width: 992px) {

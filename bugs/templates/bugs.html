@@ -4,7 +4,7 @@
 
 {% for bug in bug %}
 
-<div class="bug-container">
+<div class="container-fluid bug-container">
     <div class="row row-flex">
         <div class="col-md-6 col-lg-4 bug-box">
             <h3 class="bug-headers"><span>Author: </span>{{ user }}</h3>
@@ -14,17 +14,18 @@
                 <p>{{ bug.content|truncatewords:30 }}</p>
                 <p><a href="{% url 'bugs_detail' bug.id %}" class="btn btn-default">Read more</a></p>
                 {% if bug.image %}
-                <img id="bugImage" class="img-bugpost" src="{{ MEDIA_URL }}{{ bug.image }}" alt="{{ bug.name }}"> 
-                {% endif %}
-                <div class="Published"><p ><span class="boldtext">Published on:</span> {{ bug.published_date }} </p></div>
+                <img id="bugImage" class="img-bugpost" src="{{ MEDIA_URL }}{{ bug.image }}" alt="{{ bug.name }}"> {% endif %}
+                <div class="Published">
+                    <p><span class="boldtext">Published on:</span> {{ bug.published_date }} </p>
+                </div>
                 <div>
                     <form method="post" action="{% url 'upvote_bug' bug.id %}">
                         {% csrf_token %}
                         <button class="btn btn-success"><i class="far fa-thumbs-up"></i><span>Upvote!</span></button>
                     </form>
                 </div>
-                <p><i class="fas fa-eye"></i> {{ bug.views }}</p>
-                <p><i class="far fa-thumbs-up"></i> {{ bug.upvotes }}</p>
+                <p class="view-likes"><i class="fas fa-eye"></i> {{ bug.views }}</p>
+                <p class="view-likes"><i class="far fa-thumbs-up"></i> {{ bug.upvotes }}</p>
             </div>
         </div>
     </div>

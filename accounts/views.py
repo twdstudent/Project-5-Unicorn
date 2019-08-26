@@ -4,8 +4,9 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from accounts.forms import UserLoginForm, UserRegistrationForm
 from bugs.models import Bugs
+from bugs.views import get_bugs, upvote_bug, bugs_detail, create_or_edit_bug 
 from feature.models import Feature
-
+from feature.views import get_feature, feature_detail, create_or_edit_feature 
 
 def index(request):
     """Return the index.html file"""
@@ -70,12 +71,6 @@ def user_profile(request):
     user = User.objects.get(email=request.user.email)
     return render(request, 'profile.html', {"profile": user})
     
-@login_required
-def bugs_detail(request, pk):
-    """A view that displays the profile page of a logged in user"""
-    bug = Bugs.objects.filter(author=request.user)
-    feature = Feature.objects.filter(author=request.user)
-    return render(request, 'profile.html', {'bugs':bug, 'feature':feature})
 
 #def bugs_detail(request, pk):
 #    """

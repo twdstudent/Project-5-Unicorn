@@ -21,7 +21,7 @@ def upvote_bug(request, pk):
         bug = get_object_or_404(Bugs, pk=pk)
         bug.upvotes += 1
         bug.save()
-        return redirect('bugs.html')    
+        return redirect('get_bugs')    
 
 def bugs_detail(request, pk):
     """
