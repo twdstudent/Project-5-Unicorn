@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from accounts.forms import UserLoginForm, UserRegistrationForm
 from bugs.models import Bugs
+from feature.models import Feature
 
 
 def index(request):
@@ -69,14 +70,21 @@ def user_profile(request):
     user = User.objects.get(email=request.user.email)
     return render(request, 'profile.html', {"profile": user})
     
+@login_required
 def bugs_detail(request, pk):
-    """
-    Create a view that returns a single
-    Bug object based on the post ID (pk) and
-    render it to the 'bug-detail.html' template.
-    Or return a 404 error if the bug isn't found
-    """
-    bug = get_object_or_404(Bugs, pk=pk)
-    bug.views += 1
-    bug.save()
-    return render(request, "profile.html", {'bug': bug})    
+    """A view that displays the profile page of a logged in user"""
+    bug = Bugs.objects.filter(author=request.user)
+    feature = Feature.objects.filter(author=request.user)
+    return render(request, 'profile.html', {'bugs':bug, 'feature':feature})
+
+#def bugs_detail(request, pk):
+#    """
+#    Create a view that returns a single
+#    Bug object based on the post ID (pk) and
+#    render it to the 'bug-detail.html' template.
+#    Or return a 404 error if the bug isn't found
+#    """
+#    bug = get_object_or_404(Bugs, pk=pk)
+#    bug.views += 1
+#    bug.save()
+#    return render(request, "profile.html", {'bug': bug})    

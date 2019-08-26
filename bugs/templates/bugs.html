@@ -3,20 +3,31 @@
 <h1 class="h1">bugs</h1>
 
 {% for bug in bug %}
+
 <div class="bug-container">
-    <div class="row">
+    <div class="row row-flex">
         <div class="col-md-6 col-lg-4 bug-box">
             <h3 class="bug-headers"><span>Author: </span>{{ user }}</h3>
             <div class="sub-bug-box">
                 <h4><span>Title:</span>{{ bug.title }}</h4>
+                <div> status </div>
                 <p>{{ bug.content|truncatewords:30 }}</p>
                 <p><a href="{% url 'bugs_detail' bug.id %}" class="btn btn-default">Read more</a></p>
                 {% if bug.image %}
-                <img id="bugImage" class="img-bugpost" src="{{ MEDIA_URL }}{{ bug.image }}" alt="{{ bug.name }}"> {% endif %}
+                <img id="bugImage" class="img-bugpost" src="{{ MEDIA_URL }}{{ bug.image }}" alt="{{ bug.name }}"> 
+                {% endif %}
                 <div class="Published"><p ><span class="boldtext">Published on:</span> {{ bug.published_date }} </p></div>
+                <div>
+                    <form method="post" action="{% url 'upvote_bug' bug.id %}">
+                        {% csrf_token %}
+                        <button class="btn btn-success"><i class="far fa-thumbs-up"></i><span>Upvote!</span></button>
+                    </form>
+                </div>
                 <p><i class="fas fa-eye"></i> {{ bug.views }}</p>
+                <p><i class="far fa-thumbs-up"></i> {{ bug.upvotes }}</p>
             </div>
         </div>
     </div>
 </div>
+
 {% endfor %} {% endblock %}

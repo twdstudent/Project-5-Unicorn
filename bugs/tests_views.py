@@ -60,4 +60,13 @@ class TestViews(TestCase):
         page = self.client.get("/1")
         self.assertEqual(page.status_code, 404)    
         
-   
+#    def test_upvote_bug(self):
+#        admin = User(username="admin")
+#        admin.save()
+#        bug = Bugs(title="test", content="test")
+#        bug.save()
+#        
+#        page = self.client.post("/bugs/upvote{0}/".format(bug.id))
+#        bug.refresh_from_db()
+#        self.assertEqual(page.status_code, 302)
+#        self.assertEqual(bug.upvotes, 1)

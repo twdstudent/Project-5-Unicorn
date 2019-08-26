@@ -12,6 +12,16 @@ def get_bugs(request):
     bug = Bugs.objects.filter(published_date__lte=timezone.now()
         ).order_by('published_date')
     return render(request, "bugs.html", {'bug': bug})
+    
+def upvote_bug(request, pk):
+    """
+    A view that upvotes the selected bug
+    """
+    if request.method == "POST":
+        bug = get_object_or_404(Bugs, pk=pk)
+        bug.upvotes += 1
+        bug.save()
+        return redirect('bugs.html')    
 
 def bugs_detail(request, pk):
     """
