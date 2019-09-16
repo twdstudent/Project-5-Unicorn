@@ -3,10 +3,19 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 
 # Create your models here.
+
+"""
+A single feature posting
+"""
+
 class Feature(models.Model):
-    """
-    A single feature posting
-    """
+    STATUS_CHOICES = (
+            ('todo', 'To do'),
+            ('doing', 'Doing'),
+            ('done', "Done"),
+        )
+    status = models.CharField(max_length=5, choices=STATUS_CHOICES, default="todo")
+    upvotes = models.IntegerField(default=0)
     title = models.CharField(max_length=254, default='')
     content = models.TextField()
     created_date = models.DateTimeField(auto_now_add=True)

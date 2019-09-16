@@ -14,6 +14,16 @@ def get_feature(request):
     feature = Feature.objects.filter(published_date__lte=timezone.now()
         ).order_by('published_date')
     return render(request, "feature.html", {'feature': feature})
+
+def upvote_feature(request, pk):
+    """
+    A view that upvotes the selected bug
+    """
+    if request.method == "POST":
+        feature = get_object_or_404(Feature, pk=pk)
+        feature.upvotes += 1
+        feature.save()
+        return redirect('get_feature')   
     
 def feature_detail(request, pk):
     """

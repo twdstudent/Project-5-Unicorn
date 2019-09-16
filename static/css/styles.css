@@ -198,7 +198,13 @@ form {
 
 .view-likes {
     display: inline-block;
-    width: 50px;
+    width: 75px;
+    margin-left: 5px;
+}
+
+.thumbs-up {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .status {
