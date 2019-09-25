@@ -2,28 +2,31 @@
 
 <h1 class="h1">features</h1>
 
-{% for feature in feature %}
 <div class="container-fluid">
     <div class="row">
+        {% for feature in feature %}
         <div class="col-md-6 col-lg-4 feature-box">
             <div>
                 <h3 class="bug-headers"><span>Author: </span>{{ feature.owner }}</h3>
                 <div class="sub-feature-box">
                     <h4><span>Title:</span>{{ feature.title }}</h4>
+                    <h4><span>Status:</span> {{ feature.status }} </h4>
                     <p>{{ feature.content|truncatewords:30 }}</p>
                     <p><a href="{% url 'feature_detail' feature.id %}" class="btn btn-default">Read more</a></p>
                     <p><span class="boldtext">Published on:</span> {{ feature.published_date }} </p>
                     <div class="view-likes">
                         <form method="post" action="{% url 'upvote_feature' feature.id %}">
                             {% csrf_token %}
-                            <button class="btn btn-success"><i class="thumbs-up far fa-thumbs-up"></i></button>
+                            <button class="upvote-btn btn btn-success"><i class="thumbs-up far fa-thumbs-up"></i></button>
                         </form>
                     </div>
-                    <div class="view-likes"><p><i class="fas fa-eye"></i> {{ feature.views }}</p></div>
-                    <div class="view-likes"><p><i class="far fa-thumbs-up"></i>{{ feature.upvotes }}</p></div>
+                    <div class="view-likes"><p class="italics"><i class="fas fa-eye"></i> {{ feature.views }}</p></div>
+                    <div class="view-likes"><p class="italics"><i class="far fa-thumbs-up"></i>{{ feature.upvotes }}</p></div>
                 </div>
             </div>
+            
         </div>
+        {% endfor %}
     </div>
 </div>
-{% endfor %} {% endblock %}
+ {% endblock %}

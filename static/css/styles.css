@@ -136,7 +136,7 @@ form {
     border: 2px solid red;
     border-radius: 10px;
     margin-bottom: 20px;
-    margin-left: 20px;
+    margin-left: 40px;
     background-color: red;
     padding: 5px;
 }
@@ -199,10 +199,25 @@ form {
 .view-likes {
     display: inline-block;
     width: 75px;
-    margin-left: 5px;
+    margin-left: 20px;
 }
 
 .thumbs-up {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.upvote-btn {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px;
+}
+
+.italics {
+    width: 50%;
     margin-left: auto;
     margin-right: auto;
 }

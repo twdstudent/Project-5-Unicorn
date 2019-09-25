@@ -6,4 +6,4 @@ class BugsPostForm(forms.ModelForm):
 
     class Meta:
         model = Bugs
-        fields = ('title', 'content', 'image', 'published_date', 'owner')
+        fields = ('title', 'content', 'image', 'published_date', 'status', 'owner')

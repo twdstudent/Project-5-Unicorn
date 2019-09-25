@@ -81,3 +81,4 @@ def get_user_bugs(request):
     bug = Bugs.objects.filter(published_date__lte=timezone.now()
         ).order_by('published_date')
     return render(request, "profile.html", {'bug': bug})
+    
