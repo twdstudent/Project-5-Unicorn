@@ -1,18 +1,13 @@
 from django.test import TestCase
 from .forms import BugsPostForm
 
-#class TestBugsPostForm(TestCase):
-#
-#    def test_can_create_an_bug_with_requirede_features(self):
-#        form = BugsPostForm({
-#            'title': 'test bug',
-#            'content': 'bug content',
-#            'status': 'todo',
-#            'owner': 'test owner'
-#        })
-#        self.assertTrue(form.is_valid())
-   
-#    def test_correct_message_for_missing_title(self):
-#       form = BugsPostForm({'form': ''})
-#        self.assertFalse(form.is_valid())
-#        self.assertEqual(form.errors['title'], ['This field is required.'])
+class TestBugForm(TestCase):
+    
+    def test_bug_content(self):
+        form = BugsPostForm({'Title': 'Title'})
+        self.assertFalse(form.is_valid())
+        print(form.errors['content'], ['This field is required.'])
+        
+    def test_cannot_create_a_bug_with_required_values(self):
+        form = BugsPostForm({'title': "Test"})
+        self.assertFalse(form.is_valid())
