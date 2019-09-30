@@ -6,6 +6,7 @@ def cart_contents(request):
     Ensures that the cart contents are available when rendering
     every page, cart contents will be lost when user logs out.
     """
+    price = 10
     cart = request.session.get('cart', {})
 
     cart_items = []
