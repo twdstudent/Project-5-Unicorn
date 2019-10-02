@@ -8,7 +8,7 @@ def view_cart(request):
 
 def add_to_cart(request, id):
     """adds quantity to feature selected"""
-    quantity = int(request.POST.get('quantity'))
+    quantity = 1
 
     cart = request.session.get('cart', {})
     cart[id] = cart.get(id, quantity)

@@ -18,6 +18,7 @@ class Feature(models.Model):
     upvotes = models.IntegerField(default=0)
     title = models.CharField(max_length=254, default='')
     content = models.TextField()
+    price = models.DecimalField(max_digits=6, decimal_places=2, default=10)
     created_date = models.DateTimeField(auto_now_add=True)
     published_date = models.DateTimeField(blank=True, null=True, default=timezone.now)
     views = models.IntegerField(default=0)
