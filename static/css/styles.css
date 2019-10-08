@@ -19,6 +19,24 @@ form {
 .h1 {
     text-align: center;
     text-transform: capitalize;
+    margin-top: 30px;
+}
+
+.site-info {
+    width: 45%;
+    border: solid 1px white;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+    padding: 10px;
+    font-size: 25px;
+    text-align: center;
+    background-color: #d0e4fd;
+}
+
+.h5 {
+    font-size: 20px;
 }
 
 .align-header {
@@ -35,7 +53,9 @@ form {
 }
 
 .logged-in {
-    width: 30%;
+    width: 20%;
+    height: 20px;
+    border-radius: 10px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -84,6 +104,11 @@ form {
     width: 100%;
     margin-top: 30px;
     margin-bottom: 50px;
+}
+
+.button-container-index{
+    width: 100%;
+    margin-top: 100px;
 }
 
 .button-wrapper {
@@ -137,6 +162,8 @@ form {
 
 .img-bugpost {
     width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .bug-box {
@@ -158,6 +185,33 @@ form {
     margin-right: auto;
     background-color: red;
     padding: 5px;
+}
+
+.status-red {
+    background-color: red;
+    width: 40%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+}
+
+.status-amber {
+    background-color: orange;
+    width: 40%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+}
+
+.staus-green {
+    background-color: green;
+    width: 40%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
 }
 
 .feature-box {
@@ -184,6 +238,11 @@ form {
 .bug-headers {
     color: white;
     padding-left: 5px;
+    text-decoration: underline;
+}
+
+.title {
+    font-weight: bold;
 }
 
 .sub-bug-box {
@@ -250,3 +309,4 @@ form {
         margin-right: auto;
     }
 }
+

@@ -1,8 +1,21 @@
-{% extends 'base.html' %}
-{% block page_title %}Home Page{% endblock %}
-{% block page_heading %}<h1 class="h1">welcome to the unicorn app!</h1>{% endblock %}
+{% extends 'base.html' %} {% block page_title %}Home Page{% endblock %} {% block page_heading %}
+<h1 class="h1">welcome to the unicorn app!</h1>{% endblock %} {% block content %}
 
-{% block content %}
-<div class="index-background">
+<div class="button-container-index">
+    <div <div class="button-main-page">
+        {% if user.is_authenticated %}
+        <a href="{% url 'logout' %}" class="btn-mod btn btn-danger">Sign Out</a> 
+        {% else %}
+        <a href="{% url 'login' %}" class="btn-mod btn btn-warning">Sign In</a> 
+        {% endif %}
+    </div>
 </div>
+
+<div class='site-info'>
+    <p class="h5">
+        This is an issue tracking site, where users can report bugs and post features to be developed.
+        <br> You can upvote bugs to help push them up the order of being fixed and same for features, however features will cost money as the developers are working on these in their own time!
+    </p>
+</div>
+
 {% endblock %}

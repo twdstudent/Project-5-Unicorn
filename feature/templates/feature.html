@@ -14,9 +14,17 @@
                 <h3 class="bug-headers"><span>Author: </span>{{ feature.owner }}</h3>
                 <div class="sub-feature-box">
                     <h4><span>Title:</span>{{ feature.title }}</h4>
-                    <h4><span>Status:</span> {{ feature.status }} </h4>
+                    
+                    {% if feature.status == "todo" %}
+                    <div class="status-red">status: {{ feature.status }}</div>
+                    {% elif feature.status == "doing" %}
+                    <div class="status-amber">status: {{ feature.status }}</div>
+                    {% else %}
+                    <div class="status-green">status: {{ feature.status }}</div>
+                    {% endif %}
+                    
                     <p>{{ feature.content|truncatewords:30 }}</p>
-                    <p><a href="{% url 'feature_detail' feature.id %}" class="btn btn-default">Read more</a></p>
+                    <p><a href="{% url 'view_feature' feature.id %}" class="btn btn-default">Read more</a></p>
                     <p><span class="boldtext">Published on:</span> {{ feature.published_date }} </p>
                     <div class="view-likes">
                         <form method="post" action="{% url 'upvote_feature' feature.id %}">

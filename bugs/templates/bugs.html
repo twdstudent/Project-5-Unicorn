@@ -13,11 +13,17 @@
             <h3 class="bug-headers"><span>Author: </span>{{ bug.owner }}</h3>
             <div class="sub-bug-box">
                 <h4><span>Title:</span>{{ bug.title }}</h4>
-                <h4><span>Status:</span> {{ bug.status }} </h4>
+
+                {% if bug.status == "todo" %}
+                <div class="status-red">status: {{ bug.status }}</div>
+                {% elif bug.status == "doing" %}
+                <div class="status-amber">status: {{ bug.status }}</div>
+                {% else %}
+                <div class="status-green">status: {{ bug.status }}</div>
+                {% endif %}
+
                 <p>{{ bug.content|truncatewords:30 }}</p>
-                <p><a href="{% url 'bugs_detail' bug.id %}" class="btn btn-default">Read more</a></p>
-                {% if bug.image %}
-                <img id="bugImage" class="img-bugpost" src="{{ MEDIA_URL }}{{ bug.image }}" alt="{{ bug.name }}"> {% endif %}
+                <p><a href="{% url 'bug_detail' bug.id %}" class="btn btn-default">Read more</a></p>
                 <div class="Published">
                     <p><span class="boldtext">Published on:</span> {{ bug.published_date }} </p>
                 </div>

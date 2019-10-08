@@ -6,7 +6,7 @@
     <div class="bug-box-detail">
         <h3 class="bug-headers"><span>Author: </span>{{ user }}</h3>
         <div class="sub-bug-box">
-            <h4 class="title">Title:{{ bug.title }}</h4>
+            <h4><span>Title:</span>{{ bug.title }}</h4>
             {% if bug.image %}
             <img id="bugImage" class="img-bugpost" src="{{ MEDIA_URL }}{{ bug.image }}" alt="{{ bug.name }}"> {% endif %}
             <p>{{ bug.content }}</p>
@@ -18,7 +18,6 @@
                     <p class="italics"><i class="far fa-thumbs-up"></i> {{ bug.upvotes }}</p>
                 </div>
             <a href="{% url 'get_bugs' %}" class="btn btn-default">Back to Bugs Page</a>
-            <a href="{% url 'edit_bug' bug.id %}" class="btn btn-default"><i class="far fa-edit"></i>Edit Bug</a>
             <hr>
         </div>
     </div>

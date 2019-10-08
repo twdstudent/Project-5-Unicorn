@@ -51,4 +51,8 @@ def create_or_edit_feature(request, pk=None):
             return redirect(feature_detail, post.pk)
     else:
         form = FeaturesPostForm(instance=feature)
-    return render(request, 'feature-post-form.html', {'form': form})     
+    return render(request, 'feature-post-form.html', {'form': form}) 
+    
+def view_feature_detail(request, pk=None):
+    feature = get_object_or_404(Feature, pk=pk)
+    return render(request, "feature-view.html", {'feature': feature})    

@@ -50,4 +50,9 @@ def create_or_edit_bug(request, pk=None):
             return redirect(bugs_detail, post.pk)
     else:
         form = BugsPostForm(instance=bug)
-    return render(request, 'bug-post-form.html', {'form': form})    
+    return render(request, 'bug-post-form.html', {'form': form})
+    
+def view_bug_detail(request, pk=None):
+    bug = get_object_or_404(Bugs, pk=pk)
+    return render(request, "bug-view.html", {'bug': bug})
+    
