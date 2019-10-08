@@ -9,6 +9,8 @@ from bugs.views import get_bugs, upvote_bug, bugs_detail, create_or_edit_bug
 from feature.models import Feature
 from feature.views import get_feature, feature_detail, create_or_edit_feature 
 
+#accounts views
+
 def index(request):
     """Return the index.html file"""
     return render(request,  'index.html')
@@ -19,7 +21,6 @@ def logout(request):
     auth.logout(request)
     messages.success(request, "You have successfully been logged out")
     return redirect(reverse('index'))
-
 
 def login(request):
     """Return a login page"""
@@ -41,7 +42,6 @@ def login(request):
     else:
         login_form = UserLoginForm()
     return render(request, 'login.html', {'login_form': login_form})
-
 
 def registration(request):
     """Render the registration page"""
@@ -66,11 +66,11 @@ def registration(request):
     return render(request, 'registration.html', {
         "registration_form": registration_form})
 
-
 def user_profile(request):
     """The user's profile page"""
-    user = User.objects.get(email=request.user.email)
-    return render(request, 'profile.html', {"profile": user})
+    bug = Bugs.objects.filter(owner=request.user)
+    feature = Feature.objects.filter(owner=request.user)
+    return render(request, 'profile.html', {'bug':bug, 'feature':feature})
     
 def get_user_bugs(request):
     """

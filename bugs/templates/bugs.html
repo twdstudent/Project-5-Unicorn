@@ -2,6 +2,10 @@
 
 <h1 class="h1">bugs</h1>
 
+<div class="button-main-page">
+    <a href="{% url 'new_bug' %}" class="btn-mod btn btn-danger"><i class="fas fa-bug"></i>add a bug</a>
+</div>
+
 <div class="container-fluid bug-container">
     <div class="row">
         {% for bug in bug %}

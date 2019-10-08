@@ -3,6 +3,8 @@ from django.utils import timezone
 from .models import Bugs
 from .forms import BugsPostForm
 
+#bugs view
+
 def get_bugs(request):
     """
     This will create view that will return a list
@@ -11,10 +13,6 @@ def get_bugs(request):
     """
     bug = Bugs.objects.all()
     return render(request, "bugs.html", {'bug': bug})
-
-#    bug = Bugs.objects.filter(published_date__lte=timezone.now()
-#        ).order_by('published_date')
-#    return render(request, "bugs.html", {'bug': bug})
     
 def upvote_bug(request, pk):
     """

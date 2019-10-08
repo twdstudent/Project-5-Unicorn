@@ -21,27 +21,65 @@
 <hr class="hr">
 
 <h1 class="h1">your bugs</h1>
-    <!-- bug post content -->
-    
-    {% for bug in bug %}
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-12, col-md-6, col-lg-4, col-xl-3, bug-box">
-                <h3><span>Author:</span>{{ user }}</h3>
-                <hr>
-                <div>
-                    <p>{{ bug.content|truncatewords:30 }}</p>
-                    <p><a href="{% url 'bugs_detail' bug.id %}" class="btn btn-default">Read more</a></p>
+<!-- bug post content -->
+{% if bug %}
+<div class="container-fluid bug-container">
+    <div class="row">
+        {% for bug in bug %}
+        <div class="col-md-6 col-lg-4 bug-box">
+            <h3 class="bug-headers"><span>Author: </span>{{ bug.owner }}</h3>
+            <div class="sub-bug-box">
+                <h4><span>Title:</span>{{ bug.title }}</h4>
+                <h4><span>Status:</span> {{ bug.status }} </h4>
+                <p>{{ bug.content|truncatewords:30 }}</p>
+                <p><a href="{% url 'bugs_detail' bug.id %}" class="btn btn-default">Read more</a></p>
+                {% if bug.image %}
+                <img id="bugImage" class="img-bugpost" src="{{ MEDIA_URL }}{{ bug.image }}" alt="{{ bug.name }}"> {% endif %}
+                <div class="Published">
                     <p><span class="boldtext">Published on:</span> {{ bug.published_date }} </p>
-                    <p><span class="boldtext">Views:</span> {{ bug.views }}</p>
+                </div>
+                <div class="view-likes">
+                    <p class="italics"><i class="fas fa-eye"></i> {{ bug.views }}</p>
+                </div>
+                <div class="view-likes">
+                    <p class="italics"><i class="far fa-thumbs-up"></i> {{ bug.upvotes }}</p>
                 </div>
             </div>
         </div>
+        {% endfor %}
     </div>
-    {% endfor %}
-    
-<hr class="hr">    
+</div>
+{% endif %}
+
+<hr class="hr">
 
 <h1 class="h1">your features</h1>
 
+{% if feature %}
+
+{% endif %}
+<div class="container-fluid">
+    <div class="row">
+        {% for feature in feature %}
+        <div class="col-md-6 col-lg-4 feature-box">
+            <div>
+                <h3 class="bug-headers"><span>Author: </span>{{ feature.owner }}</h3>
+                <div class="sub-feature-box">
+                    <h4><span>Title:</span>{{ feature.title }}</h4>
+                    <h4><span>Status:</span> {{ feature.status }} </h4>
+                    <p>{{ feature.content|truncatewords:30 }}</p>
+                    <p><a href="{% url 'feature_detail' feature.id %}" class="btn btn-default">Read more</a></p>
+                    <p><span class="boldtext">Published on:</span> {{ feature.published_date }} </p>
+                    <div class="view-likes">
+                        <p class="italics"><i class="fas fa-eye"></i> {{ feature.views }}</p>
+                    </div>
+                    <div class="view-likes">
+                        <p class="italics"><i class="far fa-thumbs-up"></i>{{ feature.upvotes }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}

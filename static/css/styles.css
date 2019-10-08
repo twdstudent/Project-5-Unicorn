@@ -102,6 +102,13 @@ form {
     border-radius: 40px;
 }
 
+.button-main-page {
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
 .button1 {
     width: 250px;
     margin-left: auto;
@@ -163,7 +170,7 @@ form {
     padding: 5px;
 }
 
-.feature-box-detail{
+.feature-box-detail {
     width: 70%;
     border: 2px solid green;
     border-radius: 10px;

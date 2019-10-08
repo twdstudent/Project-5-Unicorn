@@ -27,4 +27,3 @@ class Bugs(models.Model):
     def __str__(self):
         return self.title
 
-# owner = models.ForeignKey(User, on_delete=models.CASCADE)
