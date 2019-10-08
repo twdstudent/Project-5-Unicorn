@@ -46,20 +46,24 @@
 {% endblock %}
 
 {% block content %}
-<div class="row row-flex">
-    {% for item in cart_items %}
-        <div class="col-xs-12 col-sm-6 col-md-4 col-ld-3 col-xl-2">
+<div class="container-fluid">
+    <div class="row">
+        {% for item in cart_items %}
+        <div class="col-md-6 col-lg-4 feature-box">
             <div>
-                <div class="caption">
-                    <h3>{{ item.feature.name }}</h3>
-                    <p class="feature-description">{{ item.feature.content }}</p>
-                    <p>{{ item.quantity }}</p>
-                    <p>item.feature.price</p>
+                <h3 class="bug-headers"><span>Author: </span>{{ item.feature.owner }}</h3>
+                <div class="sub-feature-box">
+                    <span>Title:</span>{{ item.feature.title }}</span>
+                    <br>
+                    <span>Description:</span><p>{{ item.feature.content|truncatewords:30 }}</p>
+                    <p><span>Price £</span>{{ item.feature.price }}</p>
                 </div>
             </div>
         </div>
-    {% endfor %}
+        {% endfor %}
+    </div>
 </div>
+
 <div class="row total">
     <p>Total</p>
     <p><i class="fas fa-pound-sign"></i></span>{{ total }}</p>
