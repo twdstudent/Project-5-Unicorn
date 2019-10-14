@@ -71,7 +71,7 @@
                 <div class="sub-feature-box">
                     <h4><span>Title:</span>{{ feature.title }}</h4>
 
-                    {% if feature.status == "todo" %}
+                    {% if bug.status == "todo" %}
                     <div class="status-red">status: {{ feature.status }}</div>
                     {% elif bug.status == "doing" %}
                     <div class="status-amber">status: {{ feature.status }}</div>

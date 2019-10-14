@@ -1,9 +1,9 @@
 # Project 5
 ### Unicorn Attractor.
 
-- <a href="https://github.com/twdstudent/Project-5-Unicorn">Link to GitHub Repository.</a>
-- <a href="https://project-5-unicornapp-td.herokuapp.com/">Link to live site on Heroku.</a>
-- <a href="https://dashboard.heroku.com/apps/project-5-unicornapp-td">Heroku Repo</a>
+- <a target="_blank" href="https://github.com/twdstudent/Project-5-Unicorn">Link to GitHub Repository.</a>
+- <a target="_blank" href="https://project-5-unicornapp-td.herokuapp.com/">Link to live site on Heroku.</a>
+- <a target="_blank" href="https://dashboard.heroku.com/apps/project-5-unicornapp-td">Heroku Repo</a>
 
 [![Build Status](https://travis-ci.org/twdstudent/Project-5-Unicorn.svg?branch=master)](https://travis-ci.org/twdstudent/Project-5-Unicorn)
 
@@ -13,14 +13,12 @@ The service is primarly a free one, user can upvote bugs to help increase focus 
 Features will only be developed if enough money is offered.
 
 ### UX
-(wire frames located in wire-frames directory)
-This project is not functioning, i was simply unable to build a working application with the time I had left.
-The project runs fine from cloud 9, the naviagation, forms and general layout is responsive.
-The log in/log out functionality is working fine and all the reset password finctionality is also wokring fine.
-However sadly the application wont open open up on Heroku.
-Sadly there is not much else to write about this section due to it being incomplete and not being able to wire upuploading bugs 
-an features.
-Design intened to be simple and clean, simply drawing focus on what users add to the site.
+This is a responsive application, with the use of BootStraps Grid system and colapsable navigation menu, 
+the lay out and navigation is responisve to deivce usage.
+When a user posts a feature and/or bug, only said user can can edit/update the status of the feature/bugs via their profile page.
+All bugs and features that are posted by all user display on their respective pages and all can be expanded to read all detail,
+This was to help save on screen retail and consitantcy of the application appearance. Bugs and features can't be edited/updated 
+on these pages as I didnt want all users to be able to change other users posts.
 
 ### Features
 back end logic for bugs and features is complete but was unable to wire it up to the templates.
@@ -60,27 +58,7 @@ Heroku config variables
 - STRIPE_SECRET (not sharing value)
 
 GitHub Deployment:
-- intial commit, rebuilding repo with files removed
-- setting up Travis intergrated testing
-- app specific url files added
-- tarvis issues
-- fixed indentation in travis file
-- trying something out
-- travis issue again
-- fixing requiremnets file
-- added feature app
-- added cart app and fixing url bug
-- fixed bug in contexts.py file
-- fixed urls.py file in root direcotory
-- created checkout app and built models
-- added checkout template, forms.py file and urls.py for checkout
-- updated requirements.txt file for stripe
-- fixed bug with checkout app and added icons
-- updated settings.py file for travis testing
-- installed gunicorn and created the Procfile
-- added heroku to allowed hosts
-- trying something out
-- prepping for submission
+- <a target="_blank" href="https://github.com/twdstudent/Project-5-Unicorn/commits/master">GitHub Commits</a>
 
 enviroment variables were used (env.py file) to keep sensitive information hidden from production.
 Git ignore file used so said variables didnt get pushed to GitHib.

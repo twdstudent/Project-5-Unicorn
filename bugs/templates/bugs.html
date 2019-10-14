@@ -9,7 +9,7 @@
 <div class="container-fluid bug-container">
     <div class="row">
         {% for bug in bug %}
-        <div class="col-md-6 col-lg-4 bug-box">
+        <div class="col-sm-12 col-md-4 col-lg-3 bug-box">
             <h3 class="bug-headers"><span>Author: </span>{{ bug.owner }}</h3>
             <div class="sub-bug-box">
                 <h4><span>Title:</span>{{ bug.title }}</h4>
@@ -21,9 +21,10 @@
                 {% else %}
                 <div class="status-green">status: {{ bug.status }}</div>
                 {% endif %}
-
-                <p>{{ bug.content|truncatewords:30 }}</p>
-                <p><a href="{% url 'bug_detail' bug.id %}" class="btn btn-default">Read more</a></p>
+                <div class="content">
+                    <p>{{ bug.content|truncatewords:30 }}</p>
+                </div>
+                <a href="{% url 'bug_detail' bug.id %}" class="btn btn-default">Read more</a>
                 <div class="Published">
                     <p><span class="boldtext">Published on:</span> {{ bug.published_date }} </p>
                 </div>
