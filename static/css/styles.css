@@ -335,3 +335,12 @@ form {
         margin-right: auto;
     }
 }
+
+@media (max-width: 992px) {
+    .feature-box {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
