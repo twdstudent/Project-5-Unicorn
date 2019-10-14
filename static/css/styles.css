@@ -345,6 +345,7 @@ form {
 
 @media (max-width: 992px) {
     .align-header {
+        width: 90%;
         margin-left: auto;
         margin-right: auto;
         text-align: center;
