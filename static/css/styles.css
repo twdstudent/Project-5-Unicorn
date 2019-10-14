@@ -243,7 +243,7 @@ form {
     width: 30%;
     border: 2px solid green;
     border-radius: 10px;
-    margin-bottom: 80px;
+    margin-bottom: 20px;
     margin-left: 20px;
     background-color: green;
     padding: 5px;
@@ -324,6 +324,22 @@ form {
         width: 250px;
         margin-left: auto;
         margin-right: auto;
+    }
+}
+
+@media (max-width: 992px) {
+    .italics {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 992px) {
+    .view-likes {
+        display: inline-block;
+        width: 75px;
+        margin-left: 20px;
     }
 }
 
