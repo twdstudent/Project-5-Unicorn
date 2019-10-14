@@ -14,6 +14,7 @@ form {
 .fas,
 .far {
     margin-right: 5px;
+    margin-left: 5px;
 }
 
 .h1 {
@@ -338,8 +339,23 @@ form {
 @media (max-width: 992px) {
     .view-likes {
         display: inline-block;
-        width: 75px;
+        width: 35px;
         margin-left: 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .button-container-index {
+        width: 100%;
+        margin-top: 25px;
+    }
+}
+
+@media (max-width: 992px) {
+    .btn-default {
+        margin-left: 60px;
+        margin-top: 5px;
+        margin-bottom: 5px;
     }
 }
 
