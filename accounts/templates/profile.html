@@ -61,7 +61,7 @@
 
 <h1 class="h1">your features</h1>
 
-{% if feature %} {% endif %}
+{% if feature %} 
 <div class="container-fluid">
     <div class="row">
         {% for feature in feature %}
@@ -94,4 +94,6 @@
         {% endfor %}
     </div>
 </div>
+{% endif %}
+
 {% endblock %}
