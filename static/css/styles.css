@@ -176,11 +176,11 @@ form {
 }
 
 .bug-box {
-    width: 350px;
+    width: 30%;
     border: 2px solid red;
     border-radius: 10px;
     margin-bottom: 20px;
-    margin-left: 80px;
+    margin-left: 20px;
     background-color: red;
     padding: 5px;
 }
@@ -241,11 +241,11 @@ form {
 }
 
 .feature-box {
-    width: 350px;
+    width: 30%;
     border: 2px solid green;
     border-radius: 10px;
     margin-bottom: 80px;
-    margin-left: 80px;
+    margin-left: 20px;
     background-color: green;
     padding: 5px;
 }
