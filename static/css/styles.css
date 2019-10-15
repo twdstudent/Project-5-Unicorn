@@ -161,7 +161,9 @@ form {
 }
 
 .checkout-btn {
-    width: 30%;
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hr {
