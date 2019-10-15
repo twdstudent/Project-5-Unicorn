@@ -97,4 +97,7 @@ When commiting i un comment this variable so desired data base is used.
 
 
 ### Acknowledgements
-Would like to thank Chris Zielinski for his support and guidence through this course.
+Would like to thank Chris Zielinski for his support and guidence through this course and all tutors who have helped 
+with all my technical issues.
+
+
