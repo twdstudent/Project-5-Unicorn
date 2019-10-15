@@ -3,7 +3,6 @@
 
 - <a target="_blank" href="https://github.com/twdstudent/Project-5-Unicorn">Link to GitHub Repository.</a>
 - <a target="_blank" href="https://project-5-unicornapp-td.herokuapp.com/">Link to live site on Heroku.</a>
-- <a target="_blank" href="https://dashboard.heroku.com/apps/project-5-unicornapp-td">Heroku Repo</a>
 
 [![Build Status](https://travis-ci.org/twdstudent/Project-5-Unicorn.svg?branch=master)](https://travis-ci.org/twdstudent/Project-5-Unicorn)
 
