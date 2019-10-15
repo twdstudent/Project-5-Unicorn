@@ -160,6 +160,10 @@ form {
     margin-top: 5px;
 }
 
+.btn .btn-success .success-2 {
+    width: 30%;
+}
+
 .hr {
     width: 85%;
 }
